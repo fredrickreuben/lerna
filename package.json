@@ -1,0 +1,24 @@
+{
+  "name": "root",
+  "private": true,
+  "scripts": {
+    "bootstrap": "lerna exec npm i",
+    "publish": "lerna run tsc && lerna publish --no-private",
+    "bootstrap:ci": "lerna exec npm ci -- --ignore-scripts",
+    "build": "lerna run build",
+    "start:dev": "lerna run start:dev",
+    "test": "lerna run test",
+    "clean": "lerna clean --yes",
+    "lint": "eslint . --ext .ts --fix --quiet",
+    "prepare": "husky install",
+    "prettier": "node node_modules/.bin/prettier --check \"**/*.{js,json,ts,yml,yaml}\"",
+    "prettier:write": "node node_modules/.bin/prettier --write \"**/*.{js,json,ts,yml,yaml}\""
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "husky": "^8.0.3",
+    "lerna": "^7.0.2"
+  }
+}
